@@ -330,7 +330,7 @@ footer small{display:block;margin-top:14px;font-size:.82rem}
         </ul>
         <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
           <a class="btn" href="https://nutricion.onlysportcenter.es">Entrar en Nutrición</a>
-          <span style="color:var(--muted);font-size:.95rem" id="pruebaTxt">Prueba gratis 14 días: pídela en el centro.</span>
+          <span style="color:var(--muted);font-size:.95rem" id="pruebaTxt">Para socios del centro: pregúntanos en el centro cómo darte de alta.</span>
         </div>
       </div>
       <div class="movil" aria-hidden="true"><div class="pant">
@@ -421,7 +421,7 @@ function pintarNoticias(){
 }
 
 function pintarCentro(){
-  if(CENTRO.diasPrueba) $('#pruebaTxt').textContent=`Prueba gratis ${CENTRO.diasPrueba} días: pídela en el centro.`;
+  if(CENTRO.pruebaActiva===true) $('#pruebaTxt').textContent=`Prueba gratis ${CENTRO.diasPrueba||14} días: pídela en el centro.`;
 }
 
 const LEGAL={
