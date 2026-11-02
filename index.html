@@ -423,6 +423,8 @@ function pintarNoticias(){
 
 function pintarCentro(){
   if(CENTRO.pruebaActiva===true) $('#pruebaTxt').textContent=`Prueba gratis ${CENTRO.diasPrueba||14} días: pídela en el centro.`;
+  const of=CENTRO.oferta; const quedan=of&&of.activa===true ? Math.max(0,(+of.plazas||0)-(+of.usadas||0)) : 0;
+  if(quedan>0){ const m=Math.max(1,+of.meses||1); const e=$('#pruebaTxt'); e.innerHTML=`<b style="color:var(--ink)">${esc(of.nombre||'Oferta de lanzamiento')}: ${esc(String(of.precio).replace('.',','))} € ${m===1?'el primer mes':`los primeros ${m} meses`}</b> · ${quedan===1?'queda 1 plaza':`quedan ${quedan} plazas`}. Pídela en el centro.`; }
 }
 
 const LEGAL={
